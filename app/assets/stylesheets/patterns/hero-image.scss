@@ -1,0 +1,22 @@
+@import 'mixins';
+@import 'colors';
+
+figure.hero-image {
+  display:none;
+  @include desktop{
+    display:block;
+    margin-top:50px;
+    overflow:hidden;
+    height: 189px;
+    position:relative;
+    img {
+      width: 100%
+    }
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      background-color:$black;
+      color: $offwhite;
+    }
+  }
+}

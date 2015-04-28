@@ -14,6 +14,7 @@
  *= require typebase
  *= require base
  *= require patterns/round-image
+ *= require patterns/hero-image
  *= require components/nav
  *= require components/hamburger-nav-icon
  *= require components/bio-header
