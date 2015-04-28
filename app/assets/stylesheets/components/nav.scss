@@ -1,0 +1,57 @@
+@import 'colors';
+@import 'mixins';
+
+#nav {
+  @include desktop { 
+    width: 300px;
+    float: left;
+  }
+
+  header {
+    height: 50px;
+    background-color: $offwhite;
+  }
+
+  &.active ul {
+    //TODO: use a CSS transition here, css can totally handle this.
+  }
+  
+  ul {
+    //transition: all 500ms ease-in-out;
+    display:none;
+    background-color: $bluegrey;
+    position: absolute;
+    top:50px;
+    width: 100%;
+    margin:0;
+    z-index:3;
+
+    @include desktop { 
+      display:block !important; 
+      width: 300px;
+    }
+
+    li {  
+      border-top:1px solid $bluegrey-dark-accent;
+  
+      &.current{
+        border-left:3px solid $bluegrey-light-accent;
+      }  
+  
+      a{ 
+        display: block;
+        padding:10px; 
+        
+        &:hover{
+          background-color: $bluegrey-light-accent;
+        }
+      }
+    }
+  }
+  #wordmark {
+    background: asset-url('usa-wrestling-wordmark.png') 10px 10px no-repeat;
+    background-size: 67px;
+    height:100%;
+  }
+}
+

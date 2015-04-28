@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %title USA Wrestling
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    %link{:href => "http://fonts.googleapis.com/css?family=Roboto:700,300italic,400", :rel => "stylesheet", :type => "text/css"}
+      = csrf_meta_tags
+  %body
+    = render partial: 'shared/nav'
+    #content
+      = yield
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
