@@ -38,7 +38,7 @@
       border-top:1px solid $bluegrey-dark-accent;
   
       &.current{
-        border-left:3px solid $bluegrey-light-accent;
+        background-color: $bluegrey-light-accent;
       }  
   
       a{ 

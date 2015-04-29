@@ -1,22 +1,15 @@
 @import 'mixins';
 @import 'colors';
 
-figure.hero-image {
+img.hero {
   display:none;
-  @include desktop{
-    display:block;
-    margin-top:50px;
-    overflow:hidden;
-    height: 189px;
-    position:relative;
-    img {
-      width: 100%
-    }
-    figcaption {
-      position: absolute;
-      bottom: 0;
-      background-color:$black;
-      color: $offwhite;
-    }
+  @include desktop {
+    display: block;
+    margin-top: 50px;
+    overflow: hidden;
+    position: relative;
+    border: 5px solid #09436F;
+    box-shadow: 5px 5px 30px #888888;
+    max-width: 99%; /*px based borders. Yes. this is a hack*/
   }
 }
