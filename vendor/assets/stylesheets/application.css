@@ -10,13 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require reset
- *= require typebase
- *= require base
- *= require patterns/round-image
- *= require patterns/hero-image
- *= require components/nav
- *= require components/hamburger-nav-icon
- *= require components/bio-header
+ *= require_tree .
  *= require_self
  */

@@ -1,0 +1,1479 @@
+/* Table of Content */
+/* -------------------- */
+/* 1. Imports & Clears */
+/* 2. Reset */
+/* 3. General */
+/* 4. Main Container */
+/* 5. Header */
+/* 6. Topics */
+/* 7. Speakers */
+/* 8. Schedule */
+/* 9. Testimonials */
+/* 10. Registration & Sponsors */
+/* 11. Footer Section */
+/* -------------------- */
+
+/* 1. Imports & Clears */
+
+@import 'mixins';
+@import 'placeholders';
+@import 'variables';
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700&subset=latin,latin-ext);
+
+@function em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+/* natural box layout model to all elements */
+*, *:before, *:after {
+  @include box-sizing(border-box);
+}
+
+/* 2. Reset */
+
+body, h1, h2, h3, h4, h5, h6, ul, li, form, div, p, ol, button, hr, blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+article, figure, footer, header, nav, section, details, summary {
+  display: block;
+}
+
+/* 3. General */
+
+html {
+  background: $white;
+}
+
+body {
+  font: $base-font-size $default-font;
+  text-align: center;
+  color: $default-font-color;
+
+  @media all and (max-width: 640px) {
+    font-size: 13px;
+  }
+}
+
+h1, h2, h3 {
+  margin-bottom: $default-spacing * 3;
+  line-height: 1.1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-family: $headers-font;
+}
+
+p, h4, h5, h6 {
+  margin-bottom: $default-spacing;
+}
+
+input, textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+h1, h2 {
+  font-size: em(72px);
+  font-weight: bold;
+
+  @media all and (max-width: 1180px) {
+    font-size: em(64px);
+  }
+
+  @media all and (max-width: 940px) { // 980px
+    font-size: em(56px);
+  }
+
+  @media all and (max-width: 780px) {
+    font-size: em(48px);
+  }
+
+  @media all and (max-width: 480px) {
+    font-size: em(40px);
+  }
+}
+
+h2 {
+  font-weight: 300;
+}
+
+div {
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: underline;
+  color: $default-font-color;
+  outline: none;
+
+  @include transition (all, 0.2s);
+
+  &:hover {
+    text-decoration: none;
+    color: $default-font-color;
+  }
+}
+
+.subtitle, .topics h3 {
+  font-size: em(26px);
+  font-family: $headers-font;
+  font-weight: 300;
+  text-transform: uppercase;
+
+  @media all and (max-width: 1180px) {
+    font-size: em(25px);
+  }
+
+  @media all and (max-width: 940px) { // 980px
+    font-size: em(24px);
+  }
+
+  @media all and (max-width: 780px) {
+    font-size: em(22px);
+  }
+
+  @media all and (max-width: 480px) {
+    font-size: em(21px);
+  }
+}
+
+/* 4. Main Container */
+
+.page {
+  text-align: left;
+  overflow: hidden;
+
+  .container {
+    max-width: 1180px;
+
+    @media all and (max-width: 1180px) {
+      width: 98%;
+    }
+  }
+
+} //.main ends
+
+/* 5. Header */
+
+.header {
+  height: 1002px;
+  //background: $white url('images/diner-336499.jpg') top center;
+  background: $gray image-url('fraser.jpg') 50% 0 no-repeat fixed;
+  background-size: cover;
+  color: $white;
+  z-index: 1;
+
+  -webkit-clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 80%);
+  clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 80%);
+
+  @include background-size(cover);
+
+  @media all and (max-width: 940px) {
+    height: auto;
+  }
+
+  .container {
+    padding: 60px;
+    position: relative;
+    min-height: 665px;
+  }
+
+  .menu {
+    background: transparentize($default-color, .2);
+
+    @extend %clear;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 15px 60px;
+    max-width: 1180px;
+    margin: 0 auto;
+
+    @extend %clear;
+
+    li {
+      float: left;
+      margin-right: $default-spacing;
+
+      a {
+        font-size: em(16px);
+        color: $white;
+        text-transform: uppercase;
+        font-weight: 300;
+
+        &:hover, &.active {
+          color: $default-font-color;
+        }
+      }
+    }
+  }
+
+  h1 {
+    padding-top: $default-spacing * 10;
+    margin-bottom: 0; //reset
+  }
+
+  .subtitle {
+    margin-bottom: $default-spacing * 8;
+  }
+
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+
+} //.header ends
+
+.when, .where, .register-now {
+  font-size: em(18px);
+  font-weight: 300;
+  position: absolute;
+
+  @media all and (max-width: 940px) {
+    position: static;
+    margin-top: $default-spacing * 5;
+  }
+
+  span {
+    font-size: em(24px, 18px);
+  }
+}
+
+.where {
+  bottom: $default-spacing * 9;
+
+  @media all and (max-width: 940px) {
+    bottom: none; //reset
+  }
+}
+
+.when, .where {
+
+  @extend %clear;
+
+  @media all and (max-width: 940px) {
+    width: 100%;
+  }
+
+  div {
+    float: left;
+    font-family: $headers-font;
+    margin-top: 5px;
+  }
+
+  .icon-holder {
+    background-color: $default-color;
+    width: 64px;
+    padding: 14px 0;
+    text-align: center;
+    font-size: 1.5em;
+    margin-right: $default-spacing;
+    margin-top: 10px;
+  }
+
+  p {
+    margin-bottom: 0; //reset
+    line-height: 1.2em;
+  }
+
+  strong {
+    font-weight: bold;
+    color: $default-color;
+    text-transform: uppercase;
+  }
+
+}
+
+.register-now {
+  bottom: $default-spacing * 9;
+  right: 0;
+  text-align: right;
+
+  @media all and (max-width: 1180px) {
+    text-align: left;
+  }
+
+
+
+  a.button {
+    display: inline-block;
+    font-size: em(27px, 18px);
+
+    @media all and (max-width: 480px) {
+      text-align: center;
+      font-size: em(24px, 18px);
+
+      padding: 0 26px;
+      line-height: 50px;
+    }
+  }
+} //.register-now ends
+
+.button {
+  background: $default-color;
+  border: 3px solid $default-color;
+  padding: 0 46px;
+  text-decoration: none;
+  color: $white;
+  text-transform: uppercase;
+  line-height: 60px;
+  font-weight: bold;
+  font-family: $headers-font;
+
+  &:hover {
+    background: none;
+    color: $white;
+  }
+} //.button ends
+
+/* 6. Topics */
+
+.topics {
+  margin-top: -338px;
+  position: relative; //needed because of clip-path on header element
+  z-index: 10;
+
+  @media all and (max-width: 940px) {
+    margin-top: 0; //reset
+  }
+
+  .container {
+    background: $white;
+    padding: $default-spacing * 6;
+
+    @extend %clear;
+
+    div {
+      width: 33.333%;
+      padding-right: 50px;
+      margin-top: $default-spacing * 3;
+      float: left;
+
+      @media all and (max-width: 780px) {
+        width: 100%;
+        padding-right: 0;
+      }
+
+      h4, .fa {
+        color: $default-color;
+        margin-bottom: $default-spacing * 2; //reset
+
+        @media all and (max-width: 780px) {
+          margin-bottom: $default-spacing; //reset
+        }
+      }
+
+      h4 {
+        font-size: em(18px);
+        font-weight: 300;
+      }
+
+      p {
+        font-size: em(14px);
+      }
+    }
+  }
+
+  p {
+    color: $gray;
+    font-size: em(18px);
+  }
+
+} //.topics ends
+
+.speakers, .schedule, .why, .registration, .sponsors {
+  margin-bottom: $default-spacing * 6;
+}
+
+.speakers, .schedule {
+
+  h2, .subtitle {
+    padding: 0 $default-spacing * 6;
+    margin-bottom: 0; //reset
+  }
+
+  .subtitle {
+    margin-bottom: $default-spacing * 5; //reset
+  }
+}
+
+/* 7. Speakers */
+
+.speakers {
+
+  @extend %clear;
+
+} //.speakers ends
+
+.featured {
+  background: $default-color;
+
+  @extend %clear;
+
+  img {
+    float: left;
+    width: 100%;
+  }
+
+  h3, .title {
+    line-height: 1.1em;
+    font-weight: 300;
+  }
+
+  h3 {
+    font-size: em(36px);
+    margin-bottom: $default-spacing * 2;
+
+    @media all and (max-width: 1180px) {
+      font-size: em(32px);
+    }
+  }
+
+  .title {
+    font-family: $headers-font;
+    font-size: em(18px);
+    margin-bottom: $default-spacing * 4;
+
+    @media all and (max-width: 1180px) {
+      font-size: em(17px);
+      margin-bottom: $default-spacing * 2;
+    }
+  }
+
+  p {
+    font-size: em(16px);
+
+    @media all and (max-width: 1180px) {
+      font-size: em(14px);
+    }
+  }
+
+  div {
+    float: left;
+    width: 50%;
+    padding: 20px 40px;
+    color: $white;
+    font-weight: 300;
+
+    @media all and (max-width: 980px) {
+      width: 100%;
+    }
+
+    &.image {
+      padding: 0; //reset
+    }
+  }
+} //.featured ends
+
+.single {
+  width: 25%;
+  float: left;
+  position: relative;
+  cursor: pointer;
+
+  @media all and (max-width: 980px) {
+    width: 33.333%;
+  }
+
+  @media all and (max-width: 780px) {
+    width: 50%;
+  }
+
+  img {
+    float: left;
+    width: 100%;
+    height: auto;
+  }
+
+  div {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($default-color,.85);
+    padding: 30px;
+    display: none;
+    color: $white;
+  }
+
+  h3 {
+    font-size: em(36px);
+    font-weight: 300;
+    line-height: 1.1em;
+
+    @media all and (max-width: 780px) {
+      font-size: em(24px);
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-top: 6px;
+    }
+  }
+
+  strong {
+    font-size: em(18px);
+    font-weight: 300;
+    text-transform: uppercase;
+    font-family: $headers-font;
+    display: inline-block;
+
+    @media all and (max-width: 780px) {
+      font-size: em(16px);
+    }
+
+    &:before {
+      content: '';
+      width: 30px;
+      height: 5px;
+      background: $white;
+      display: block;
+      margin-bottom: $default-spacing;
+    }
+  }
+
+  a {
+    color: $white;
+    margin-right: $default-spacing;
+    opacity: .6;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+} //.single ends
+
+/* 8. Schedule */
+
+.schedule {
+
+  ul {
+    list-style-type: none;
+
+    @extend %clear;
+
+    li {
+      float: left;
+      background-color: $light-gray;
+      width: 33.333%; //number of days you have for example, in this case 100 % divided with 3 days
+      max-width: 290px;
+
+      a {
+        font-weight: bold;
+        text-decoration: none;
+        font-size: em(24px);
+        font-family: $headers-font;
+        line-height: 50px;
+        display: block;
+        padding: 0 30px;
+
+        @media all and (max-width: 780px) {
+          font-size: em(18px);
+          padding: 0 20px;
+          line-height: 40px;
+        }
+      }
+    }
+  }
+
+  .day {
+    padding: 46px 20px;
+    border: 3px solid $light-gray;
+  }
+
+} //.schedule ends
+
+/* jQuery Tabs UI styles overwrite */
+.ui-tabs {
+  padding: 0;
+
+  .ui-tabs-nav {
+    padding: 0;
+    margin-bottom: $default-spacing;
+
+    li, li.ui-tabs-active {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+
+      @include transition (all, 0.2s);
+
+      &.ui-state-active, &.ui-state-active.ui-state-hover {
+        background-color: $default-color;
+        color: $white;
+
+        a {
+          color: $white;
+        }
+      }
+
+      &.ui-state-hover {
+        background-color: lighten($default-color, 40%);
+        color: $white;
+      }
+    }
+  } //.ui-tabs-nav ends
+} //.ui-tabs ends
+
+.day, .event {
+
+  @extend %clear;
+}
+
+.event {
+
+  &.extend, &.extended {
+
+    .event-time span {
+      width: 31px;
+      height: 31px;
+      top: 7px;
+      right: -16px;
+      line-height: 28px;
+      cursor: pointer;
+    }
+  }
+
+  &:last-child .event-info div {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .event-time, .event-info {
+    float: left;
+  }
+
+  .event-time {
+    width: 290px / 1134px * 100%;
+    text-align: right;
+    padding-right: 33px;
+    position: relative;
+
+    span {
+      display: block;
+      width: 11px;
+      height: 11px;
+      background-color: $default-color;
+      position: absolute;
+      top: 17px;
+      right: -6px;
+      color: $white;
+      text-align: center;
+    }
+  }
+
+  .event-time, .event-info h4 {
+    font-family: $headers-font;
+    font-size: em(24px);
+    font-weight: 300;
+    color: $default-color;
+    line-height: 1.82em;
+
+    @media all and (max-width: 780px) {
+      font-size: em(18px);
+    }
+  }
+
+  .event-info {
+    width: 844px / 1134px * 100%;
+    padding-left: 57px;
+    border-left: 1px solid $light-gray;
+
+    h4 {
+      margin-bottom: 0;
+
+      @media all and (max-width: 780px) {
+        font-size: em(22px);
+      }
+
+      a {
+        text-decoration: none;
+        color: $default-color;
+      }
+    }
+
+    div {
+      border-bottom: 1px solid $light-gray;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+
+      @extend %clear;
+    }
+
+    img {
+      float: right;
+      padding: $default-spacing;
+    }
+  }
+}
+
+.speaker {
+  text-transform: uppercase;
+  font-size: em(18px);
+  font-family: $headers-font;
+  font-weight: normal;
+  font-weight: 300;
+  margin-bottom: 60px;
+
+  strong {
+    text-transform: none;
+    font-size: em(24px, 18px);
+    font-weight: bold;
+
+    @media all and (max-width: 780px) {
+      font-size: em(22px, 18px);
+    }
+  }
+}
+
+.why {
+  //background: $black url('images/14gfPkZbw.jpg') no-repeat 50% 0 fixed;
+
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,.6)), to(rgba(0,0,0,.6))), url('images/14gfPkZbw.jpg') no-repeat 50% 0 fixed; /* Saf4+, Chrome */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,.6), rgba(0,0,0,.6)), url('images/14gfPkZbw.jpg') no-repeat 50% 0 fixed; /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(top, rgba(0,0,0,.6), rgba(0,0,0,.6)), url('images/14gfPkZbw.jpg') no-repeat 50% 0 fixed; /* FF3.6+ */
+  background: -ms-linear-gradient(top, rgba(0,0,0,.6), rgba(0,0,0,.6)), url('images/14gfPkZbw.jpg') no-repeat 50% 0 fixed; /* IE10 */
+  background: -o-linear-gradient(top, rgba(0,0,0,.6), rgba(0,0,0,.6)), url('images/14gfPkZbw.jpg') no-repeat 50% 0 fixed; /* Opera 11.10+ */
+  background: linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,.6)), url('images/14gfPkZbw.jpg') no-repeat 50% 0 fixed; /* W3C */
+
+  color: $white;
+
+  @include background-size(cover);
+
+  .container {
+    padding: $default-spacing * 4.8 0;
+  }
+} //.why ends
+
+/* 9. Testimonials */
+
+.testimonials {
+  background-color: $white;
+  color: $gray;
+  padding: 70px 110px;
+  text-align: center;
+  margin-bottom: 70px;
+  position: relative;
+
+  h4 {
+    font-size: em(26px);
+    text-transform: uppercase;
+    color: $default-font-color;
+    font-weight: 300;
+    margin-bottom: $default-spacing * 3.5;
+    background: url('images/quote.png') top center no-repeat;
+    padding: 25px 0 10px;
+  }
+
+  blockquote {
+    font-size: em(18px);
+    font-style: italic;
+  }
+
+  cite {
+    display: block;
+    font-style: normal; //reset
+    font-size: em(14px, 18px);
+    margin-top: $default-spacing * 2;
+    color: $default-color;
+    font-family: $headers-font;
+
+    span {
+      text-transform: uppercase;
+      color: $default-font-color;
+    }
+  }
+
+  // flex slider
+  ul.flex-direction-nav {
+    list-style-type: none;
+
+    .flex-prev, .flex-next {
+      display: block;
+      position: absolute;
+      width: 64px;
+      background-color: $default-color;
+      color: $white;
+      font-size: 1.9em;
+      padding: 14px 0;
+      top: 50%;
+      margin-top: -32px;
+
+      &:hover {
+        background-color: lighten($default-color, 10%)
+      }
+    }
+
+    .flex-prev {
+      left: -10px;
+    }
+    .flex-next {
+      right: -10px;
+    }
+  }
+} //.testimonials ends
+
+.bullets {
+  padding: 0 30px;
+
+  @extend %clear;
+
+  h3, h4 {
+    font-size: em(24px);
+    font-weight: 300;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    padding: 0 30px;
+
+    @media all and (max-width: 780px) {
+      padding: 0;
+    }
+  }
+
+  h4 {
+    color: $default-color;
+  }
+
+  div {
+    padding: 0 30px;
+    width: 50%;
+    min-height: 140px;
+    float: left;
+
+    @media all and (max-width: 780px) {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+/* 10. Registration & Sponsors */
+
+.registration, .sponsors {
+
+  .container {
+    padding: 0 60px;
+  }
+  
+  h2 {
+    margin-bottom: 0; //reset
+  }
+}
+
+.registration {
+
+  .desc {
+    font-size: em(17px);
+    line-height: 1.2em;
+    color: $gray;
+  }
+
+  .subtitle, .desc {
+    margin-bottom: $default-spacing * 4;
+  }
+
+  h3 {
+    font-size: em(26px);
+    font-weight: 300;
+    color: $default-color;
+  }
+
+  @extend %clear;
+} //.registration ends
+
+.form, .price {
+  float: left;
+  width: 50%;
+
+  @media all and (max-width: 1180px) {
+    width: 100%;
+  }
+}
+
+.form {
+  padding-right: 15px;
+
+  @media all and (max-width: 1180px) {
+    padding: 0;
+    margin-bottom: $default-spacing * 2;
+  }
+}
+
+.form {
+
+  input, textarea, select {
+    width: 100%;
+    display: block;
+    margin-bottom: $default-spacing * .8;
+    border: 3px solid $light-gray;
+    background-color: $light-gray;
+    padding: 10px;
+    height: 52px;
+    font-family: $default-font;
+    font-size: em(14px);
+    //font-weight: bold;
+    color: $black;
+
+    @include transition (all, 0.2s);
+
+    &:focus, &:hover {
+      background-color: $white;
+    }
+  }
+
+  button {
+    font-size: em(24px);
+    color: $white;
+    background-color: $default-color;
+    border: 3px solid $default-color;
+    width: 100%;
+    height: 81px;
+    font-family: $headers-font;
+    cursor: pointer;
+
+    @include transition (all, 0.2s);
+
+    &:hover {
+      background: $white;
+      color: $black;
+    }
+  }
+}
+
+.price {
+  padding-left: 15px;
+
+  @media all and (max-width: 1180px) {
+    padding: 0;
+  }
+
+  h4 {
+    font-size: em(25px);
+    font-weight: bold;
+    margin-top: 20px;
+    padding-right: 25px;
+
+    span {
+      color: $default-color;
+    }
+  }
+
+  p {
+    color: $gray;
+    margin-right: 25px;
+  }
+
+  div {
+    border: 3px solid $light-gray;
+    position: relative;
+    height: 160px;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    @media all and (max-width: 640px) {
+      height: auto;
+      padding: $default-spacing;
+    }
+
+    @include transition (all, 0.2s);
+
+    &.active, &:hover {
+      border: 3px solid $default-color;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .amount {
+      background-color: $default-color;
+      float: left;
+      height: 160px;
+      width: 160px;
+      margin: -3px 25px 0 -3px;
+      color: $white;
+      font-family: $headers-font;
+      font-size: em(48px);
+      font-weight: bold;
+      line-height: 160px;
+      text-align: center;
+
+      @media all and (max-width: 640px) {
+        height: auto;
+        width: auto;
+        margin: 0;
+        float: none;
+        line-height: 1;
+        background-color: $white;
+        color: $default-color;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.sponsors {
+
+  .container {
+    position: relative;
+
+    @extend %clear;
+  }
+
+  .subtitle {
+    margin-bottom: 90px;
+
+    a {
+      font-weight: bold;
+      color: $default-color;
+      border-bottom: 2px solid lighten($default-color, 30%);
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1em;
+
+      &:hover {
+        border-bottom: 2px solid $default-color;
+      }
+    }
+  }
+
+  .slides {
+    border: 3px solid $light-gray;
+    padding: 60px;
+    position: relative;
+  }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      display: inline-block;
+      //padding: 10px;
+      //height: 100px;
+      text-align: center;
+    }
+  }
+
+  .flex-prev, .flex-next {
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    line-height: 70px;
+    text-align: center;
+    background-color: $default-font-color;
+    color: $white;
+    font-size: 1.9em;
+
+    &:hover {
+      background-color: $gray;
+    }
+  }
+
+  .flex-prev {
+    left: -32px;
+  }
+
+  .flex-next {
+    right: -32px;
+  }
+} //.sponsors ends
+
+.location {
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  h2, .subtitle {
+    padding: 0 60px;
+  }
+} 
+
+.location {
+  padding-top: 124px;
+  position: relative;
+
+  background: $black url('images/observation-deck-381232_1920.jpg') no-repeat 50% 0 fixed;
+
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,.6)), to(rgba(0,0,0,.6))), url('images/observation-deck-381232_1920.jpg') no-repeat 50% 0 fixed; /* Saf4+, Chrome */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,.6), rgba(0,0,0,.6)), url('images/observation-deck-381232_1920.jpg') no-repeat 50% 0 fixed; /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(top, rgba(0,0,0,.6), rgba(0,0,0,.6)), url('images/observation-deck-381232_1920.jpg') no-repeat 50% 0 fixed; /* FF3.6+ */
+  background: -ms-linear-gradient(top, rgba(0,0,0,.6), rgba(0,0,0,.6)), url('images/observation-deck-381232_1920.jpg') no-repeat 50% 0 fixed; /* IE10 */
+  background: -o-linear-gradient(top, rgba(0,0,0,.6), rgba(0,0,0,.6)), url('images/observation-deck-381232_1920.jpg') no-repeat 50% 0 fixed; /* Opera 11.10+ */
+  background: linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,.6)), url('images/observation-deck-381232_1920.jpg') no-repeat 50% 0 fixed; /* W3C */
+
+  @include background-size(cover);
+
+  .container {
+    z-index: 10;
+    position: relative;
+  }
+
+  h2, .subtitle {
+    color: $white;
+  }
+
+} //.location
+
+.info {
+  background-color: $white;
+  padding: 60px;
+  margin-top: 80px;
+  z-index: 2;
+
+  @extend %clear;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+} //.info
+
+.maps, .address {
+  float: left;
+  width: 50%;
+
+  @media all and (max-width: 880px) {
+    width: 100%;
+    margin-bottom: $default-spacing * 2;
+  }
+}
+
+.maps {
+
+  .images, #map_canvas {
+    border: 3px solid $light-gray;
+  }
+
+  .images {
+    margin-bottom: 15px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+#map_canvas {
+  height: 328px;
+}
+
+.address {
+  color: $gray;
+  padding-left: 25px;
+
+  @media all and (max-width: 880px) {
+    padding-left: 0;
+  }
+
+  h5, h4 {
+    font-weight: 300;
+    color: $black;
+  }
+
+  h4 {
+    font-size: em(24px);
+    margin-bottom: 40px;
+  }
+
+  h5 {
+    font-size: em(18px);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    i {
+      color: $default-color;
+    }
+  }
+
+  h5, h4, p {
+    line-height: 1.2em;
+  }
+
+  p {
+    font-size: em(14px, $base-font-size);
+  }
+} //.address
+
+.venue {
+  margin-bottom: $default-spacing * 1.5;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  a, span {
+    color: $default-color;
+  }
+} //.venue
+
+.social {
+  background-color: $white;
+  color: $white;
+  margin-top: -560px;
+  padding-top: 500px;
+
+  position: relative;
+  z-index: 5;
+
+  -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 40%, 0% 0%);
+  clip-path: polygon(0% 100%, 100% 100%, 100% 40%, 0% 0%);
+
+  .container {
+    max-width: 100%; //reset
+
+    padding-top: 114px;
+    padding-bottom: 64px;
+    background-color: $default-color;
+
+    @media all and (max-width: 1180px) {
+      width: 100%;
+    }
+  }
+
+  div {
+    padding: 0 60px;
+    max-width: 1180px;
+
+    @extend %clear;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    margin-bottom: 20px;
+  }
+
+  form {
+    //float: left;
+  }
+
+  input, button, a {
+    float: left;
+    height: 60px;
+    line-height: 60px;
+  }
+
+  input, button {
+    border: none;
+  }
+
+  input {
+    padding: 10px 20px;
+    font-family: $headers-font;
+    font-size: 18px;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button, a {
+    margin-right: 1px;
+    width: 60px;
+    text-align: center;
+    color: $white;
+    background-color: $default-font-color;
+    font-size: 24px;
+
+    &:hover {
+      color: $default-color;
+    }
+  }
+} //.social ends
+
+/* 11. Footer Section */
+
+.footer {
+  font-family: $headers-font;
+
+  .container {
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  p {
+    font-size: em(18px);
+    color: #010101;
+    font-weight: 300;
+  }
+
+  a {
+    color: $default-color;
+    text-decoration: none;
+  }
+} //.footer ends
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparentize($black, .1);
+  z-index: 9999;
+} //.overlay ends
+
+.contact-form {
+  padding: 50px 72px 72px;
+  width: 50%;
+  max-width: 675px;
+  border: 3px solid $light-gray;
+  background-color: $white;
+  text-align: left;
+  margin-top: 10%;
+  position: relative;
+  font-family: $headers-font;
+
+  @media all and (max-width: 980px) {
+    width: 96%;
+    max-width: none;
+    padding: 25px;
+  }
+
+  @media all and (max-width: 640px) {
+    width: 98%;
+    max-width: none;
+    padding: 20px;
+  }
+
+  h3 {
+    font-size: em(72px);
+    font-weight: 300;
+    margin-bottom: 0;
+
+    @media all and (max-width: 980px) {
+      font-size: em(56px);
+    }
+
+    @media all and (max-width: 640px) {
+      font-size: em(36px);
+    }
+  }
+
+  p {
+    font-size: em(24px);
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: $default-spacing * 4.5;
+
+    @media all and (max-width: 980px) {
+      font-size: em(20px);
+    }
+
+    @media all and (max-width: 640px) {
+      font-size: em(18px);
+    }
+
+    &.error, &.message {
+      text-transform: none; //reset
+      font-size: em(14px, 14px); //reset
+      margin: 0; //reset
+      margin-top: $default-spacing * .7;
+      font-family: $default-font; //reset
+    }
+
+    &.error {
+
+      &.active {
+        padding: $default-spacing;
+        background: #fef0f0;
+        color: #ea0001;
+        border: 3px solid #f8b2b2;
+      }
+    }
+  } // paragraf ends!
+
+  .form {
+    float: none; //reset
+    width: 100%; //reset
+    padding-right: 0; //reset
+  }
+
+  input, textarea {
+    margin-bottom: $default-spacing * .7;
+
+    &.error {
+      border: 3px solid #f8b2b2;
+    }
+  }
+
+  textarea {
+    height: 220px;
+
+    @media all and (max-width: 640px) {
+      height: 150px;
+    }
+  }
+
+  a {
+    position: absolute;
+    color: $default-color;
+    top: 18px;
+    right: 18px;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+} //.contact-form ends
+
+.back {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 99;
+
+    .container {
+      position: relative;
+      max-width: 1180px;
+    }
+
+    a {
+    width: 50px;
+    height: 50px;
+    background: $default-color;
+    text-align: center;
+    color: $white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include transition(all, .2s);
+
+    &:hover {
+      bottom: -6px;
+    }
+  }
+} //.back ends
+
+.anchor {
+  display: block;
+  height: 0px;
+}
+
