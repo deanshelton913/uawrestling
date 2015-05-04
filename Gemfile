@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0.beta4'
+gem 'rails', '4.2.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0.beta1'
 # Use Uglifier as compressor for JavaScript assets
@@ -33,7 +33,6 @@ gem "lograge"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
