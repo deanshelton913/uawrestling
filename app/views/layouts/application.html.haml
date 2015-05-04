@@ -7,7 +7,7 @@
       %meta{:content => "", :name => "description"}/
       %meta{:content => "width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0", :name => "viewport"}/
       = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-  
+
       / Google Map
       %script{:src => "https://maps.googleapis.com/maps/api/js?sensor=false"}
       :javascript
@@ -22,7 +22,7 @@
           }
 
           var map = new google.maps.Map(document.getElementById('map_canvas'), map_options)
-          var myIcon = new google.maps.MarkerImage('images/map_icon.png', null, null, null, new google.maps.Size(36,54));
+          var myIcon = new google.maps.MarkerImage('map_icon.png', null, null, null, new google.maps.Size(36,54));
 
           var marker = new google.maps.Marker({
             position: myLatlng,
