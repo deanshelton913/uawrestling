@@ -746,7 +746,7 @@ a {
 }
 
 .why {
-  //background: $black url('images/14gfPkZbw.jpg') no-repeat 50% 0 fixed;
+  background: $black url('images/14gfPkZbw.jpg') no-repeat 50% 0 fixed;
 
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,.6)), to(rgba(0,0,0,.6))), url('images/14gfPkZbw.jpg') no-repeat 50% 0 fixed; /* Saf4+, Chrome */
   background: -webkit-linear-gradient(top, rgba(0,0,0,.6), rgba(0,0,0,.6)), url('images/14gfPkZbw.jpg') no-repeat 50% 0 fixed; /* Chrome 10+, Saf5.1+ */
@@ -875,7 +875,7 @@ a {
   .container {
     padding: 0 60px;
   }
-  
+
   h2 {
     margin-bottom: 0; //reset
   }
@@ -1111,7 +1111,7 @@ a {
   h2, .subtitle {
     padding: 0 60px;
   }
-} 
+}
 
 .location {
   padding-top: 124px;
@@ -1476,4 +1476,3 @@ a {
   display: block;
   height: 0px;
 }
-
