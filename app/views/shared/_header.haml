@@ -1,0 +1,63 @@
+/ header
+.header
+  / menu
+  .menu
+    %ul
+      %li
+        %a{:href => "#speakers"} speakers
+      %li
+        %a{:href => "#schedule"} schedule
+      %li
+        %a{:href => "#registration"} registration
+      %li
+        %a{:href => "#sponsors"} sponsors
+      %li
+        %a{:href => "#location"} location
+      %li
+        %a.open-contact-form{:href => "#contact"} contact us
+  / menu ends!
+  / header container
+  .container
+    / logo or main heading
+    %h1
+      %a{:href => "#"} USA Wrestling Confrence 2015
+    / logo or main heading ends!
+    / subtitle
+    %p.subtitle
+      1 track, 3 conference days, 4 workshops, 10 excellent speakers and
+      = succeed "." do
+        %strong
+          %a{:href => "#"} just 300 available seats
+    / subtitle ends!
+    / when
+    .when
+      .icon-holder
+        %i.fa.fa-calendar
+      %div
+        %p
+          %strong When
+        %p
+          %span (TBD) October 2015
+          = succeed "Starting" do
+            %br/
+          at (TBD)
+    / when ends!
+    / where
+    .where
+      .icon-holder
+        %i.fa.fa-map-marker
+      %div
+        %p
+          %strong Where
+        %p
+          %span San Diego
+          %br/
+          %a{:href => "#"} Awesome Venue Name
+    / where ends!
+    / register
+    .register-now
+      %p Tickets are on sale now!
+      %a.button{:href => "#registration"} Register Now
+    / register ends!
+  / header container ends!
+/ header ends!
