@@ -274,14 +274,3 @@
   %a{:href => "#top"}
     %i.fa.fa-angle-up.fa-3x
 .overlay{:style => "display: none;"}
-.contact-form
-  %h3 Contact Us
-  %p We will get back to you as soon as possible
-  .form
-    %form{:action => "contact.php", :method => "post"}
-      %textarea{:name => "message", :placeholder => "Message"}
-      %button{:name => "submit", :type => "submit"} Send Message
-  %p.error
-  %p.message
-  %a.close-contact-form{:href => "#"}
-    %i.fa.fa-times.fa-lg
