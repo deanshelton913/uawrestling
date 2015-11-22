@@ -2,16 +2,16 @@
   .container
     %h3
       %strong CELEBRATE TEAM USA IN THEIR QUEST FOR OLYMPIC GOLD
-    %p 
+    %p
       Event proceeds benefit the U.S. Wrestling Foundation
     %div
       %i.fa.fa-code.fa-2x
       %h4 SUPPORT
-      %p Wrestling instills the values of courage hard work, discipline, perseverance and humility. It forges character that lasts a lifetime. 
+      %p Wrestling instills the values of courage hard work, discipline, perseverance and humility. It forges character that lasts a lifetime.
     %div
       %i.fa.fa-line-chart.fa-2x
       %h4 ORGANIZATION
-      %p 
+      %p
         U.S. Wrestling Foundation supports the growth of wrestling at all levels through the missions of USA Wrestling, the National Wrestling Coaches Association and the National Wrestling Hall of Fame. USWF is a 501(c)3 non-profit organization. Tax ID # 37-1698099.
     %div
       %i.fa.fa-lightbulb-o.fa-2x
@@ -163,30 +163,60 @@
 %a#registration.anchor
 .registration
   .container
-    %h2 Pricing & Registration
+    %h2 Registration
     %p.subtitle
-      %strong Only 300 available seats
-      Get your Conference Tickets early.
-    %p.desc Quisque gravida libero sodales augue luctus elementum. In tristique faucibus diam, sit amet ultrices erat porttitor ut. Phasellus sit amet lorem sit amet orci lobortis mattis. Nulla venenatis, quam vitae pellentesque sollicitudin, erat enim varius nisl, sed porta augue mi et dui.
-    %h3 Fill out your information
+      %strong
+      Get Your Tickets early.
     .form
-      %form{:action => "", :method => "post"}
-        %button{:name => "submit", :type => "submit"} Confirm Your Order
+      %form{:action => "https://secure3.4agoodcause.com/us-wrestling-foundation/gift.aspx?id=1", :method => "get"}
+        %button{:name => "submit", :type => "submit"} Register
     .price
       %div
-        %p.amount $330
+        %p.amount $150k
         %h4
-          Early Bird
-          %span Save NOW
-        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac mollis risus. Nulla ornare ipsum id lacus vehicula sit amet euismod nibh sagittis.
+          Title Sponsor
+        %p This exclusive opportunity to be named the Title Sponsor of this prestigious event offers the Sponsor the opportunity to customize their marketing efforts and to participate in a series of once in a lifetime experiences.
       %div
-        %p.amount $350
-        %h4 Conference
-        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac mollis risus. Nulla ornare ipsum id lacus vehicula sit amet euismod nibh sagittis.
+        %p.amount $100k
+        %h4 Platinum Level
+        %ul
+          %li Company Banner parachuted into the Gala.
+          %li Special Operations Adventure and Executive Bonding Package for 6.
+          %li Ceremonial Wrestling Gift for all your guests
+          %li VIP Concierge before and at the Dinner Gala
       %div
-        %p.amount $500
-        %h4 Conference + Workshops
-        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac mollis risus. Nulla ornare ipsum id lacus vehicula sit amet euismod nibh sagittis.
+        %p.amount $50k
+        %h4 Gold Level
+        %ul
+          %li Ceremonial Wrestling Gift for all your guests
+          %li VIP Concierge before and at the Dinner Gala
+          %li On site Valet Parking for all guests
+          %li Invitation for you and your guests to the Pre-Event Reception
+      %div
+        %p.amount $25k
+        %h4 Silver Level
+        %ul
+          %li Receive recognition through on site marketing at event.
+          %li Dedicated table side server during dinner.
+          %li Company listed as “Silver Sponsor” in the printed program.
+          %li One premier table for ten with two honored guest.
+      %div
+        %p.amount $10k
+        %h4 Bronze Level
+        %ul
+          %li Company listed as “Bronze Sponsor” in the printed program
+          %li One premier table for ten with two honored guests
+      %div
+        %p.amount $5k
+        %h4 Table
+        %ul
+          %li Company listed as “Table Sponsor” in the printed program
+          %li One premier table for ten
+      %div
+        %p.amount $600
+        %h4 Individual Tickets
+        %ul
+          %li Admission and seating for one
 %a#sponsors.anchor
 .sponsors
   .container
@@ -220,7 +250,7 @@
           LA Center Studios
         .venue
           %p
-            %span LA Center Studios 
+            %span LA Center Studios
           %p 450 S Bixel St,
           %p Los Angeles, CA 90017
 .social
