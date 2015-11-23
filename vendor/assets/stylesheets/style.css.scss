@@ -403,6 +403,7 @@ a {
   h2, .subtitle {
     padding: 0 $default-spacing * 6;
     margin-bottom: 0; //reset
+    clear: left;
   }
 
   .subtitle {
@@ -1479,3 +1480,103 @@ a {
   display: block;
   height: 0px;
 }
+
+
+
+
+.cochairs{
+  padding: 0 20px;
+}
+.list li {
+  background: url("http://bradfrost.github.com/this-is-responsive/patterns/images/icon_arrow_right.png") no-repeat 97% 50%;
+  // border-bottom: 1px solid #ccc;
+  display: table;
+  border-collapse: collapse;
+  width: 50%;
+  float: left;
+  height: 64px;
+  margin-bottom: 1em;
+  padding-right: 1em;
+  &:nth-child(2n+3){
+    clear:left;
+  }
+  h4 {
+    color: #ea4c0f;
+    font-size: 1.3em;
+    font-weight: 300;
+  }
+}
+.inner {
+  display: table-row;
+  overflow: hidden;
+}
+.li-img {
+  display: table-cell;
+  width: 10%;
+  padding-right: 1em;
+}
+.li-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.li-text {
+  display: table-cell;
+  width: 100%;
+}
+.li-head {
+  margin: 0;
+}
+.li-sub {
+  margin: 0;
+}
+
+@media all and (min-width: 35em) {
+  .cochairs{
+    padding: 0 60px 60px;
+  }
+  .list li {
+    float: left;
+    width: 33.33333%;
+    &:nth-child(2n+3){
+      clear:none;
+    }
+    &:nth-child(3n+4){
+      clear:left;
+    }
+  }
+}
+
+@media all and (min-width: 10em) {
+  .cochairs{
+    padding: 10px;
+  }
+  .list li {
+    float: none;
+    width: 100%;
+    padding-bottom:0;
+    &:nth-child(2n+3){
+      clear:none;
+    }
+    &:nth-child(3n+4){
+      clear:none;
+    }
+  }
+}
+
+
+
+
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
