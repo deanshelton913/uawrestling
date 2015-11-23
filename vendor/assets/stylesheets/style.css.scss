@@ -1547,22 +1547,6 @@ a {
   }
 }
 
-@media all and (min-width: 10em) {
-  .cochairs{
-    padding: 10px;
-  }
-  .list li {
-    float: none;
-    width: 100%;
-    padding-bottom:0;
-    &:nth-child(2n+3){
-      clear:none;
-    }
-    &:nth-child(3n+4){
-      clear:none;
-    }
-  }
-}
 
 
 
