@@ -170,10 +170,11 @@ a {
 .header {
   height: 1002px;
   //background: $white url('images/diner-336499.jpg') top center;
-  background: $gray image-url('paralax-bg/usawrestling.jpg') 50% 0 no-repeat fixed;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), $gray image-url('paralax-bg/backgroundMain.jpg') 50% 0 no-repeat fixed;
   background-size: cover;
   color: $white;
   z-index: 1;
+
 
   -webkit-clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 80%);
   clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 80%);
@@ -875,6 +876,7 @@ a {
 
 /* 10. Registration & Sponsors */
 
+
 .registration, .sponsors {
 
   .container {
@@ -1051,7 +1053,7 @@ a {
   }
 
   .subtitle {
-    margin-bottom: 90px;
+    margin-bottom: 10px;
 
     a {
       font-weight: bold;
@@ -1077,10 +1079,10 @@ a {
     list-style-type: none;
 
     li {
-      display: inline-block;
+      display: block;
       //padding: 10px;
       //height: 100px;
-      text-align: center;
+      margin-bottom: 10px;
     }
   }
 
