@@ -204,11 +204,20 @@ a {
     @extend %clear;
   }
 
+  img{
+    height: 80px;
+    width: auto;
+    background-color: #fff;
+    margin: 0;
+    padding: 10px;
+  }
+
   ul {
     list-style-type: none;
     padding: 15px 60px;
     max-width: 1180px;
     margin: 0 auto;
+
 
     @extend %clear;
 
@@ -236,7 +245,7 @@ a {
   }
 
   .subtitle {
-    margin-bottom: $default-spacing * 8;
+    // margin-bottom: $default-spacing * 8;
   }
 
   a {
