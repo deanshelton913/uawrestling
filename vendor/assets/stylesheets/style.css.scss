@@ -189,6 +189,13 @@ a {
     padding: 60px;
     position: relative;
     min-height: 665px;
+    .copyright {
+      opacity:0.5;
+      font-size:0.7em;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 
   .menu {
@@ -225,6 +232,7 @@ a {
   h1 {
     padding-top: $default-spacing * 10;
     margin-bottom: 0; //reset
+    padding-top: 0;
   }
 
   .subtitle {
