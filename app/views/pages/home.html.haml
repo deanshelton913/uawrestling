@@ -3,9 +3,9 @@
     %h3
       %strong CELEBRATE TEAM USA IN THEIR QUEST FOR OLYMPIC GOLD
     %p
-      Please join us and a star-studded lineup to celebrate the U.S. Olympic Wrestling Team in their quest for gold and help us build a pipeline for Olympic-style wrestling in U.S. colleges.
+      Join us and a star-studded lineup to help grow the Olympic wrestling movement and establish American dominance in international wrestling.
     %div
-      %i.fa.fa-code.fa-2x
+      %i.fa.fa-trophy.fa-2x
       %h4 Champions in Life
       %p Wrestling instills the values of courage hard work, discipline, perseverance and humility. It forges character that lasts a lifetime.  Help us grow the sport that turns young men and women into champions in life.
     %div
@@ -14,7 +14,7 @@
       %p
         U.S. Wrestling Foundation supports the growth of wrestling at all levels through the missions of USA Wrestling, the National Wrestling Coaches Association and the National Wrestling Hall of Fame. With you on our team, we can't lose.
     %div
-      %i.fa.fa-lightbulb-o.fa-2x
+      %i.fa.fa-graduation-cap.fa-2x
       %h4 Non-Profit
       %p U.S. Wrestling Foundation is an IRS approved 501(c)3 non-profit charitable organization. Tax ID# 37-1698099
 
@@ -95,28 +95,8 @@
       %ul.list.img-list
         %li
           .li-text
-            %h4.li-head Chuck Africano
-            %p.li-sub Army Veteran
-        %li
-          .li-text
             %h4.li-head John Bardis
             %p.li-sub Former CEO, Medassets
-        %li
-          .li-text
-            %h4.li-head Rich Bender
-            %p.li-sub Executive Director, USA Wrestling
-        %li
-          .li-text
-            %h4.li-head Randy Couture
-            %p.li-sub UFC World Champion
-        %li
-          .li-text
-            %h4.li-head Dr. David Curby
-            %p.li-sub Exec. Dir. Beat the Streets-Chicago
-        %li
-          .li-text
-            %h4.li-head Steve Fraser
-            %p.li-sub Olympic Champion
         %li
           .li-text
             %h4.li-head John Galt
@@ -127,47 +107,29 @@
             %p.li-sub Olympic Champion
         %li
           .li-text
-            %h4.li-head Michael Liberty
-            %p.li-sub Founder, Mozido
-        %li
-          .li-text
             %h4.li-head Charles Poliquin
             %p.li-sub World Renowned Strength Coach
         %li
           .li-text
-            %h4.li-head James Ravannack
-            %p.li-sub President, USA Wrestling
+            %h4.li-head Steve Fraser
+            %p.li-sub Olympic Champion
         %li
           .li-text
-            %h4.li-head Dan Russell
-            %p.li-sub 4x NCAA DII Champion
-            %p.li-sub President, Battleground.TV
-        %li
-          .li-text
-            %h4.li-head Nancy Schultz
-            %p.li-sub CEO, Rudis Inc.
-        %li
-          .li-text
-            %h4.li-head Jeff Waters
-            %p.li-sub Chairman, U.S. Wrestling Foundation
-        %li
-          .li-text
-            %h4.li-head Chris Ursitti
-            %p.li-sub Owner, LA Center Studios
+            %h4.li-head Dr. David Curby
+            %p.li-sub Exec. Dir. Beat the Streets-Chicago
         %li
           .li-text
             %h4.li-head Kevin Hummer
-            %p.li-sub Air Force Veteran
-
-
+            %p.li-sub Vice Chairman, U.S. Wrestling Foundation, Air Force Veteran and CEO, RJ Promotions
+        %li
+          .li-text
+            %h4.li-head Nancy Schultz Vitangeli
+            %p.li-sub Partner, Rudis Sports Apparel
 .schedule
   .container
     %h2 Event Schedule
     %p.subtitle Meet the Stars
     .tabs
-      -#%ul
-      -#  %li
-      -#    %a{:href => "#tabs-1"} One Day Only
       #tabs-1.day
         .event
           .event-time
@@ -192,31 +154,6 @@
           .event-info
             %div
               %h4 Evening Program
-
-.why
-  .container
-    .bullets
-      %h3 How Wrestling Strengthens America
-      %div
-        %h4
-          %i.fa.fa-check
-            Wrestling is for Everybody
-        %p Wrestling offers the greatest opportunity for youth to participate regardless of size, weight, gender, physical limitation or socio-economic status.
-      %div
-        %h4
-          %i.fa.fa-check
-          Wrestling Builds Character
-        %p It instills the values of courage, hard work, discipline, perseverance and humility. It forges character that lasts a lifetime and trains people to triumph over adversity.
-      %div
-        %h4
-          %i.fa.fa-check
-          Wrestlers are Prime Military Recruits
-        %p The US military recruits heavily from the wrestling community. Our shared values, work ethic and resilience are the foundation for our Special Operation Forces.
-      %div
-        %h4
-          %i.fa.fa-check
-          Wrestling Develops Leaders
-        %p Our vision is to produce the greatest generation of Americans. Disciplined. Courageous. Hard working. Persevering in any circumstance. Overcomers of every challenge. Our next great leaders. Our titans of industry. Our mighty warriors. Our teachers. Our sons and daughters.
 %a#registration.anchor
 .registration
   .container
@@ -225,8 +162,8 @@
       %strong
       Get Your Tickets early.
     .form
-      %form{:action => "https://secure3.4agoodcause.com/us-wrestling-foundation/register.aspx?eventid=5", :method => "get"}
-        %button{:name => "submit", :type => "submit"} Register
+      %a{target:'_new', class: 'button large', href: "https://secure3.4agoodcause.com/us-wrestling-foundation/register.aspx?eventid=5" }
+        Register
     .price
       %div
         %p.amount $600
@@ -248,10 +185,9 @@
       %a{:href => "tel: 703-297-6351"} 703-297-6351
       Call or Email Today!
     .form
-      %form{:action => "mailto:jack@uswrestlingfoundation.com", :method => "get"}
-        %button{:name => "submit", :type => "submit"}
-          %i.fa.fa-envelope-o
-          Contact Us
+      %a{ href: "mailto:jack@uswrestlingfoundation.com", target: '_new', class: 'button large' }
+        %i.fa.fa-envelope-o
+        Contact Us
     .price
       %div
         %p.amount $150k
