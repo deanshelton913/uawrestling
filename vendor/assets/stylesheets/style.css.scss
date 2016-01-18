@@ -906,10 +906,14 @@ a {
 }
 
 .registration {
-  ul li {
-    color: #888;
-    list-style-position: inside;
+  ul {
+    list-style-position: outside;
     list-style-type: square;
+    color: #888;
+
+    // li {
+    //   display: block;
+    // }
   }
   .desc {
     font-size: em(17px);
@@ -1093,14 +1097,9 @@ a {
   }
 
   ul {
-    list-style-type: none;
-
-    li {
-      display: block;
-      //padding: 10px;
-      //height: 100px;
-      margin-bottom: 10px;
-    }
+    list-style-position: outside;
+    list-style-type: square;
+    color: #888;
   }
 
   .flex-prev, .flex-next {
