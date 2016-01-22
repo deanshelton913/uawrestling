@@ -353,7 +353,7 @@ a {
 
   &:hover {
     background: none;
-    color: $white;
+    color: #000;
   }
 } //.button ends
 
@@ -1567,9 +1567,6 @@ a {
 
 
 
-
-
-
 .clearfix:after {
      visibility: hidden;
      display: block;
@@ -1587,4 +1584,15 @@ a {
 a.button.large{
   padding: 0.4em 66px;
   font-size: 2em;
+}
+.donate{
+  padding: 20px 0;
+  a {
+    background: transparent;
+    color: #000;
+    &:hover{
+      color:#fff;
+      background-color: #ea4c0f;
+    }
+  }
 }
