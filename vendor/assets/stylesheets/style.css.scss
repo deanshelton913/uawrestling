@@ -210,6 +210,10 @@ a {
     background-color: #fff;
     margin: 0;
     padding: 10px;
+    &.marines{
+      float:right;
+      background-color:transparent;
+    }
   }
 
   ul {
@@ -1507,7 +1511,7 @@ a {
   padding: 0 20px;
 }
 .list li {
-  background: url("http://bradfrost.github.com/this-is-responsive/patterns/images/icon_arrow_right.png") no-repeat 97% 50%;
+  // background: url("http://bradfrost.github.com/this-is-responsive/patterns/images/icon_arrow_right.png") no-repeat 97% 50%;
   // border-bottom: 1px solid #ccc;
   display: table;
   border-collapse: collapse;
